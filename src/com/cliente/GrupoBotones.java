@@ -1,5 +1,6 @@
 package com.cliente;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 
@@ -18,11 +19,13 @@ public class GrupoBotones extends JPanel {
         
         this.ta = ta;
         
-        this.setLayout(new GridLayout(1,10,2,2));
+        this.setLayout(new GridLayout(1,10,4,4));
         for (int i = 0; i < 10; i++) {
             Boton b = new Boton(nombres[i], ta);
             this.add(b);
         }
+        
+        this.setBackground(Color.BLACK);
 
     }
 

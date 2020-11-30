@@ -1,6 +1,7 @@
 package com.cliente;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -20,7 +21,7 @@ public class Ventana extends JFrame {
         this.setEnabled(false);
         
         // validacion y autenticacion simple
-        String res = JOptionPane.showInputDialog(this, "Ingrese password para conectar con el servidor");
+        String res = JOptionPane.showInputDialog(this, "Ingrese password para conectar con el servidor:", "CONEXIÓN hacia localhost:9991", JOptionPane.QUESTION_MESSAGE);
         if(!res.equals("conn")){
             JOptionPane.showMessageDialog(this, "VALIDACIÓN INCORRECTA! INTENTE DE NUEVO MAS TARDE.");
             iniciarConexion = false;
@@ -34,10 +35,12 @@ public class Ventana extends JFrame {
     }
 
     private void initConfig() {
-        this.setBounds(200, 100, 800, 800);// config de las dimensiones de la ventana
+        this.setBounds(200, 100, 1000, 300);// config de las dimensiones de la ventana
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// config para que el programa se acabe cuando se de click en la equis
         this.setLayout(new BorderLayout());// definimos el tipo de diseno que va a tener (distribucion de los paneles)
         this.setVisible(true);// hacemos aparecer el componente
+        
+        this.setBackground(Color.BLACK);
     }
 
     private synchronized void colocarComponentes() {

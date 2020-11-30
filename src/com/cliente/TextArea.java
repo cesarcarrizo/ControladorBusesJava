@@ -1,5 +1,8 @@
 package com.cliente;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
 import javax.swing.*;
 
 /**
@@ -14,10 +17,16 @@ public class TextArea extends JPanel {
         super();
      
         area = new JTextArea();
-        area.setRows(40);
-        area.setColumns(50);
+//        area.setRows(10);
+//        area.setColumns(20);
+
+        this.setLayout(new GridLayout(1,1));
         area.setEditable(false);// readonly
         area.setVisible(true);
+        
+        area.setFont(new Font("Bahnschrift", Font.BOLD, 18));
+        area.setBackground(Color.BLACK);
+        area.setForeground(Color.WHITE);
 
         this.add(new JScrollPane(area));
     }

@@ -1,5 +1,7 @@
 package com.cliente;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -20,8 +22,15 @@ public class Boton extends JButton implements ActionListener {
 
     public Boton(String text, TextArea ta) {
         super(text);
+        diseno();
         this.ta = ta;
         addActionListener(this);
+    }
+
+    private void diseno() {
+        this.setFont(new Font("Bahnschrift", Font.BOLD, 18));
+        this.setForeground(Color.WHITE);
+        this.setBackground(Color.RED);
     }
 
     @Override
@@ -34,7 +43,7 @@ public class Boton extends JButton implements ActionListener {
         h.start();
 
     }
-    
+
     // esta vlase permite que haya un manejo serial sobre los threads de peticion para obtener la info de los buses
     class Handler extends Thread {
 
