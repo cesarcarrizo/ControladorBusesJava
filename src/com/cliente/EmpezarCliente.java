@@ -1,7 +1,7 @@
 package com.cliente;
 
-import com.servidor.Bus;
 import java.io.*;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -10,12 +10,12 @@ import java.io.*;
 public class EmpezarCliente {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+        
+        ///////// MAIN CLIENTE ////////// 
+        SwingUtilities.invokeLater(() -> {
+            Ventana v = new Ventana();
 
-//        ServicioIOCliente io = new ServicioIOCliente("test");
-//        io.iniciar();
-//        System.out.println(io.getReturnString());
-
-            
-
+        });
     }
+
 }
