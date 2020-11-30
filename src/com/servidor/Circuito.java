@@ -9,7 +9,6 @@ import java.util.LinkedList;
 public class Circuito {
 
     private LinkedList<Bus> buses;
-    private TiempoSimulado reloj;
     private boolean estaEnJornada;
     private String[] nombres;
 
@@ -43,6 +42,29 @@ public class Circuito {
         }
         
     }
+
+    public boolean estaEnJornada() {
+        return estaEnJornada;
+    }
+
     
+    public synchronized String obtenerInfoBus(int index){
+        return buses.get(index).toString();
+    }
+    
+    public void iniciarJornada(){
+        estaEnJornada = true;
+        for (int i = 0; i < buses.size(); i++) {
+            buses.get(i).setEstaTrabajando(true);
+            buses.get(i).t.start();
+        }
+    }
+    
+    public void terminarJornada(){
+        estaEnJornada = false;
+        for (int i = 0; i < buses.size(); i++) {
+            buses.get(i).setEstaTrabajando(false);
+        }
+    }
     
 }

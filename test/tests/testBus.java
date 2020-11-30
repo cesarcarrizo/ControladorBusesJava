@@ -34,11 +34,11 @@ public class testBus {
 //       
 //        controller.start();
 
-            System.out.println(BUS.estaTrabajando());
-            BUS.setEstaTrabajando(true);
-            BUS.t.start();
-            Thread.sleep(25000);
-            BUS.setEstaTrabajando(false);
+            //System.out.println(BUS.estaTrabajando());
+//            BUS.setEstaTrabajando(true);
+//            BUS.t.start();
+//            Thread.sleep(20000);
+//            BUS.setEstaTrabajando(false);
         
         
 

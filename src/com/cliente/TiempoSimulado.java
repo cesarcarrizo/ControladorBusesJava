@@ -1,8 +1,9 @@
 
-package com.servidor;
+package com.cliente;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 
 /**
  *
@@ -12,8 +13,10 @@ public class TiempoSimulado extends Thread {
         
     private int horas, mins, segs;
     private boolean estaFuncionando;
+    private JLabel label;
     
-    public TiempoSimulado(){
+    public TiempoSimulado(JLabel label){
+        this.label = label;
         horas = 0;
         mins = 0;
         segs = 0;
@@ -44,7 +47,7 @@ public class TiempoSimulado extends Thread {
     }
     
     
-    @Override public String toString(){
+    @Override public synchronized String toString(){
         return String.format("%d:%d:%d", horas, mins, segs);
     }
 
@@ -55,7 +58,8 @@ public class TiempoSimulado extends Thread {
         while(estaFuncionando){
             try {
                 tick();
-                Thread.sleep(100);
+                label.setText(this.toString());
+                Thread.sleep(2);
                 //System.out.println(this);
             } catch (InterruptedException ex) {
                 Logger.getLogger(TiempoSimulado.class.getName()).log(Level.SEVERE, null, ex);

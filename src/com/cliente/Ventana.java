@@ -10,7 +10,7 @@ import javax.swing.*;
 public class Ventana extends JFrame {
 
     private TextArea ta; // output de la informacion
-    private GrupoBotones gb;
+    private GrupoBotones gb;// input del usuario
     private Titulo t;
     private boolean iniciarConexion;
     
@@ -40,7 +40,7 @@ public class Ventana extends JFrame {
         this.setVisible(true);// hacemos aparecer el componente
     }
 
-    private void colocarComponentes() {
+    private synchronized void colocarComponentes() {
         ta = new TextArea();
         gb = new GrupoBotones(ta);
         t = new Titulo();

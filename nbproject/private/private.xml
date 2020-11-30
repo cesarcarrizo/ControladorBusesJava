@@ -5,10 +5,16 @@
         <group>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/Ventana.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/servidor/EmpezarServidor.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/Titulo.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/GrupoBotones.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/TextArea.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/servidor/Paradas.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/EmpezarCliente.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/ServicioIOCliente.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/test/tests/TestCircuito.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/GrupoBotones.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/servidor/Bus.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/TextArea.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/servidor/ServicioIOServidor.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/servidor/Circuito.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/TiempoSimulado.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoFinalConcurrente/src/com/cliente/Boton.java</file>
         </group>
     </open-files>

@@ -12,6 +12,7 @@ public class TextArea extends JPanel {
 
     public TextArea() {
         super();
+     
         area = new JTextArea();
         area.setRows(40);
         area.setColumns(50);
@@ -22,7 +23,7 @@ public class TextArea extends JPanel {
     }
 
     public void logErase(String str) {
-
+        
         area.setText(str);
     }
 

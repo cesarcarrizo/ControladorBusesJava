@@ -1,5 +1,6 @@
 package com.servidor;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -8,7 +9,7 @@ import java.util.logging.Logger;
  *
  * @author Mario
  */
-public class Bus implements Runnable {
+public class Bus implements Runnable, Serializable {
 
     // definimos los atrr para la parada en donde se encuentra el bus, su nombre, la parada antecesora y la proxima para a llegar
     private Paradas paradaActual, paradaProxima, paradaAnterior;
@@ -27,15 +28,24 @@ public class Bus implements Runnable {
     @Override
     public void run() {
         while (estaTrabajando) {
-            this.salirDeParada();
-            System.out.println(this);
             try {
-                Thread.sleep(tiempoRestante);
+                this.salirDeParada();
+                try {
+                    int iteraciones = tiempoRestante;
+                    for (int i = 0; i < iteraciones; i++) {
+                        if(!estaTrabajando) break;
+                        Thread.sleep(2);
+                        tiempoRestante--;
+                    }
+                    
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Bus.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                this.llegarAParada();
+                Thread.sleep(3000);// para por 3 segundos reales en la parada
             } catch (InterruptedException ex) {
                 Logger.getLogger(Bus.class.getName()).log(Level.SEVERE, null, ex);
             }
-            this.llegarAParada();
-            
         }
     }
 
@@ -61,7 +71,7 @@ public class Bus implements Runnable {
     }
 
     // comentar
-    private void configuracionInicial() {
+    private synchronized void configuracionInicial() {
 
         // iniciamos el thread pero no se corre
         t = new Thread(this, "BusThread[" + nombre + "]");
@@ -105,7 +115,7 @@ public class Bus implements Runnable {
         tiempoRestante = r.nextInt(10000);
     }
 
-    public void salirDeParada() {
+    public synchronized void salirDeParada() {
         // si el servicio esta en el horario de trabajo y el bus sale
         if (this.estaTrabajando) {
             // la parada donde estaba pasa a ser la anterior y se desocupa
@@ -126,7 +136,7 @@ public class Bus implements Runnable {
         this.estaTrabajando = estaTrabajando;
     }
 
-    public void llegarAParada() {
+    public synchronized void llegarAParada() {
         // primero se comprueba si el bus esta trabajando y si esta en carretera
         if (this.estaTrabajando && this.paradaActual == null) {
 
